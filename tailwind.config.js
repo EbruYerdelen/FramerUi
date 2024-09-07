@@ -15,6 +15,7 @@ export default {
       colors: {
         darkLine: "rgba(20, 20, 20, 1)",
         darkLine2: "rgba(20, 20, 20, 0.5)",
+        lightGray: "rgba(229, 229, 229, 1)",
       },
     },
   },

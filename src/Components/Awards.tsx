@@ -28,7 +28,7 @@ const Awards = () => {
 
       {/*you can try mapping over the data instead*/}
       <div className="w-full flex justify-center main-wrap">
-        <div className="sm:w-[70%] w-full flex flex-col pt-32 ml-auto uppercase text-darkLine font-medium text-[0.9rem]">
+        <div className="sm:w-[70%] w-full flex flex-col pt-32 ml-auto uppercase text-darkLine font-medium  sm:text-[0.9rem] text-[0.6rem]">
           <div className="w-full flex flex-row justify-start border-x-0 border-t-[1px] border-solid p-4 hover:bg-slate-100 cursor-pointer">
             <div className="flex min-w-[32%] items-center justify-start">
               houston exponential

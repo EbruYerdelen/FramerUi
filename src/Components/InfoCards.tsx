@@ -7,18 +7,18 @@ type InfoCardProps = {
 
 const InfoCards = ({cards}:InfoCardProps) => {
   return (
-    <div className="mt-20 flex flex-col gap-y-28">
+    <div className="mt-20 flex flex-col gap-y-24">
       <div className="flex flex-col justify-center sm:items-end items-start font-medium md:pr-36 sm:pr-14 pl-5  uppercase">
         <div>
-          <p className="sm:text-7.5xl text-6xl">thoughtful</p>
+          <p className="sm:text-7.5xl text-5xl">thoughtful</p>
         </div>
 
         <div className="flex flex-row items-baseline sm:gap-7 gap-3">
           <div>
-            <p className="sm:text-8xl text-6xl">process</p>
+            <p className="sm:text-8xl text-5xl">process</p>
           </div>
           <div>
-            <p className="sm:text-normal text-sm">I think a lot</p>
+            <p className="sm:text-normal text-xs">I think a lot</p>
           </div>
         </div>
       </div>

@@ -14,3 +14,7 @@ export type InfoCardItem = {
   description: string;
   
 }
+
+export type faqItem = {
+  question: string;
+}

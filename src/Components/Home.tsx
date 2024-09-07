@@ -6,82 +6,12 @@ import Yahoo from "../Utils/Icons/Yahoo";
 import Formula from "../Utils/Icons/Formula";
 import Awwards from "../Utils/Icons/Awwards";
 import Work from "./Work";
-import { InfoCardItem, ProjectItem } from "../types/type";
 import InfoCards from "./InfoCards";
 import Awards from "./Awards";
 import Comments from "./Comments";
+import Faq from "./Faq";
+import { cardsData, faqsData, projectsData } from "../Utils/Data";
 
-const projectsData: ProjectItem[] = [
-  {
-    title: "houston exponential",
-    description: "A new digital HUB for houston's biggest startup ecosystem.",
-    image: "/assets/images/houstonExp.png",
-    altText: "Houston Exponential",
-    reverse: false,
-  },
-  {
-    title: "Nami ml",
-    description:
-      "A brand new digital identity and website for the subscription App service that focuses on happy subscribers.",
-    image: "/assets/images/NamiML.png",
-    altText: "Nami ML",
-    reverse: true,
-  },
-  {
-    title: "thin reel",
-    description:
-      "How we turned a local studio into one of the biggest video agencies in the south of the UK.",
-    image: "/assets/images/thinReel.png",
-    altText: "Thin Reel",
-    reverse: false,
-  },
-];
-
-
-const cardsData: InfoCardItem[] = [
-  {
-    letter: "A",
-    order: "01/",
-    header: "Analysis",
-    description:
-      "Live workshop where we define the main problems and challenges before building a strategic plan moving forward.",
-  },
-  {
-    letter: "R",
-    order: "02/",
-    header: "Research",
-    description:
-      "Competitive & Market research with the aim of finding that sweet spot that will set your brand apart.",
-  },
-  {
-    letter: "D",
-    order: "03/",
-    header: "Design",
-    description:
-      "Here’s where your digital product starts to become a tangible thing with visual elements and a great UX design.",
-  },
-  {
-    letter: "D",
-    order: "04/",
-    header: "Development",
-    description:
-      "Using Webflow, a no-code tool that allow us full creative development & is easy to manage by your team after launch.",
-  },
-  {
-    letter: "O",
-    order: "05/",
-    header: "Onboarding",
-    description:
-      "How to update and maintain your new digital product in minutes using no-code tools that are easy to use.",
-  },
-  {
-    letter: "S",
-    order: "06/",
-    header: "Support",
-    description:
-      "I got you, even after launching your digital product you can still count on me for every question or issue.",
-  },
-];
 
 const Home = () => {
   
@@ -117,11 +47,11 @@ const Home = () => {
           </div>
         </div>
 
-        {/*do it responsive for extra small devices,lower than 500 px*/}
+
         <div className="p-4 flex lg:justify-end justify-center">
           <div className="lg:mr-12 w-fit flex flex-col gap-10 items-center text-sm leading-4">
             <p className=" text-stone-800">WORK SEEN ON</p>
-            <div className="flex gap-7 sm:gap-12 md:gap-20 lg:gap-28">
+            <div className="sm:flex sm:flex-row grid grid-cols-2 gap-7 sm:gap-12 md:gap-20 lg:gap-28">
               <div>
                 <Flux />
               </div>
@@ -157,7 +87,7 @@ const Home = () => {
 
       <div className="p-10 pr-6 pt-60 flex-col flex md:flex-row gap-[20%] uppercase">
         <p className="p-5">more projects</p>
-        <div className=" p-5 flex flex-col text-[rgba(20, 20, 20, 1)] font-medium text-8xl">
+        <div className=" p-5 flex flex-col text-darkLine font-medium sm:text-8xl text-4xl">
           <a href="#" className="p-4 border-x-0 border-y-[1px] border-solid">
             HUNTER YEANY
           </a>
@@ -172,7 +102,33 @@ const Home = () => {
 
       {<InfoCards cards={cardsData} />}
       {<Awards />}
-      {<Comments/>}
+      {<Comments />}
+
+      
+      <div className="p-4 pt-24 flex justify-center">
+        <div className=" w-fit flex flex-col gap-10 items-center leading-4">
+          <p className=" text-stone-800 text-base font-medium uppercase">
+            worked with some of the best out there
+          </p>
+          <div className="sm:flex sm:flex-row grid grid-cols-2 gap-7 sm:gap-12 md:gap-20 lg:gap-28">
+            <div>
+              <Flux />
+            </div>
+            <div>
+              <Yahoo />
+            </div>
+            <div>
+              <Formula />
+            </div>
+            <div>
+              <Awwards />
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      {<Faq faqs={faqsData} />}
     </div>
   );
 }
