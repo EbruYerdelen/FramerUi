@@ -39,3 +39,4 @@ const Table = ({ data }) => {
 };
 
 export default Table;
+
