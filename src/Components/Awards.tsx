@@ -1,30 +1,86 @@
-import AwardsDivSvg from "./AwardsDivSvg"
+
+import { motion } from "framer-motion";
+import AwardCards from "./AwardCards";
+
+
+
+const childVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (index: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: index * 0.05,
+      duration: 0.5,
+    },
+  }),
+};
+
+const slideVariant = {
+  hidden: { opacity: 0, x: 150 },
+  visible: (index: number) => ({
+    opacity: 1,
+    x: 0,
+    transition: {
+      delay: index * 0.05,
+      duration: 0.7,
+    },
+  }),
+};
+
+
 
 const Awards = () => {
+  
+
+
   return (
     <div className=" mt-48 w-full flex flex-col gap-y-24 ">
       <div className="flex flex-col justify-center sm:items-center items-start font-medium  pl-5  uppercase">
-        <div>
-          <p className="sm:text-8xl text-6xl pr-20 sm:pr-14">Humble</p>
-        </div>
+        <motion.div
+          variants={slideVariant}
+          custom={3}
+          initial="hidden"
+          whileInView="visible"
+        >
+          <motion.p className="sm:text-8xl text-6xl pr-20 sm:pr-14">
+            Humble
+          </motion.p>
+        </motion.div>
 
         <div className="flex flex-row items-end sm:gap-7 gap-3">
-          <div>
-            <p className="sm:text-8xl text-6xl">Brag</p>
-          </div>
+          <motion.div
+            variants={slideVariant}
+            custom={0}
+            initial="hidden"
+            whileInView="visible"
+          >
+            <motion.p className="sm:text-8xl text-6xl">Brag</motion.p>
+          </motion.div>
           <div className="flex flex-col">
-            <p className="sm:text-normal text-sm">I won some awards</p>
-            <p className="sm:text-normal text-sm">along the way</p>
+            <motion.p
+              variants={childVariants}
+              custom={0}
+              initial="hidden"
+              whileInView="visible"
+              className="sm:text-normal text-sm"
+            >
+              I won some awards
+            </motion.p>
+            <motion.p
+              variants={childVariants}
+              custom={2}
+              initial="hidden"
+              whileInView="visible"
+              className="sm:text-normal text-sm"
+            >
+              along the way
+            </motion.p>
           </div>
         </div>
       </div>
-      <AwardsDivSvg
-        src="/div.svg"
-        svgProps={{
-          className: "award-svg",
-          viewBox: "0 0 1200 500",
-        }}
-      />
+
+      <AwardCards/>
 
       {/*you can try mapping over the data instead*/}
       <div className="w-full flex justify-center main-wrap">
@@ -50,7 +106,7 @@ const Awards = () => {
               awwards
             </div>
             <div className="flex min-w-[32%] items-center justify-start">
-              ui / ux /i nnovation
+              ui / ux /innovation
             </div>
             <div className="flex items-center justify-start">2021</div>
           </div>
@@ -76,7 +132,7 @@ const Awards = () => {
               awwards
             </div>
             <div className="flex min-w-[32%] items-center justify-start">
-              ui / ux /i nnovation
+              ui / ux /innovation
             </div>
             <div className="flex items-center justify-start">2022</div>
           </div>
@@ -102,7 +158,7 @@ const Awards = () => {
               css design awards
             </div>
             <div className="flex min-w-[32%] items-center justify-start">
-              ui / ux /i nnovation
+              ui / ux /innovation
             </div>
             <div className="flex items-center justify-start">2021</div>
           </div>
@@ -113,3 +169,5 @@ const Awards = () => {
 }
 
 export default Awards
+
+

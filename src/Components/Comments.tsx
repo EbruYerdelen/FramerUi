@@ -1,4 +1,8 @@
 import CommentIcon from "../Utils/Icons/CommentIcon";
+import LeftArrow from "../Utils/Icons/LeftArrow";
+import RightArrow from "../Utils/Icons/RightArrow";
+
+
 
 
 const Comments = () => {
@@ -60,8 +64,10 @@ const Comments = () => {
             </div>
           </div>
 
-          <div className="border-t-2 border-darkLine p-7 flex justify-center">
+          <div className="border-t-2 border-darkLine p-7 flex justify-between items-center">
+            <LeftArrow/>
             <p>01/04</p>
+            <RightArrow/>
           </div>
         </div>
       </div>

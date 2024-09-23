@@ -3,7 +3,7 @@ const WebflowLink = () => {
   return (
     <svg
       width="32"
-      height="155"
+      height="165"
       viewBox="0 0 10 49"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

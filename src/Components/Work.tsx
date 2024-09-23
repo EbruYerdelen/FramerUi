@@ -1,12 +1,58 @@
 import { ProjectItem } from "../types/type";
+import { motion } from "framer-motion";
 
 type WorkProps = {
   projects: ProjectItem[];
 };
 
 
+const titleVariant = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.05,
+      duration: 0.5,
+    },
+  },
+};
 
-const Work = ({ projects }:WorkProps) => {
+const descriptionVariant = {
+  hidden: { opacity: 0, x: -200 },
+  visible: (index: number) => ({
+    opacity: 1,
+    x: 0,
+    transition: {
+      delay: index * 0.05,
+      duration: 0.7,
+    },
+  }),
+};
+
+
+const imageVariant = {
+  hidden: { opacity: 0, width: "0%", scale: 1 },
+  visible: {
+    opacity: 1,
+    filter: "brightness(0.8)",
+    width: "100%",
+    transition: {
+      duration: 0.7,
+    },
+  },
+  hover: {
+    scale: 1.05,
+    filter: "brightness(0.5)",
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
+
+
+
+const Work = ({ projects }: WorkProps) => {
   return (
     <div
       id="work"
@@ -16,7 +62,7 @@ const Work = ({ projects }:WorkProps) => {
         <a
           key={index}
           className={`flex flex-col sm:flex-row items-center w-full sm:w-[90%] mx-auto cursor-pointer ${
-            project.reverse ? "sm:flex-row-reverse sm:gap-x-28" : ""
+            project.reverse ? "sm:flex-row-reverse lg:gap-x-28 sm:gap-x-8" : ""
           }`}
           href="#"
         >
@@ -25,12 +71,25 @@ const Work = ({ projects }:WorkProps) => {
               project.reverse ? "sm:order-2" : "order-1"
             }`}
           >
-            <div className="uppercase text-2xl sm:text-3xl font-medium">
+            <motion.div
+              variants={titleVariant}
+              initial="hidden"
+              whileInView="visible"
+              className="uppercase text-2xl sm:text-3xl font-medium"
+            >
               {project.title}
-            </div>
-            <p className={`pl-4 text-sm leading-6 sm:text-base mt-2 font-normal max-w-[70%] sm:max-w-[70%] ${project.reverse ? "sm:max-w-[90%]" : ""}`}>
+            </motion.div>
+            <motion.p
+              key={index}
+              variants={descriptionVariant}
+              initial="hidden"
+              whileInView="visible"
+              className={`pl-4 text-sm leading-6 sm:text-base mt-2 font-normal max-w-[70%] sm:max-w-[70%] ${
+                project.reverse ? "sm:max-w-[90%]" : ""
+              }`}
+            >
               {project.description}
-            </p>
+            </motion.p>
           </div>
 
           <div
@@ -38,14 +97,17 @@ const Work = ({ projects }:WorkProps) => {
               project.reverse ? "sm:order-2" : "order-1"
             }`}
           >
-            <div className="aspect-video bg-black relative">
-              <img
+            <motion.div className="aspect-video relative overflow-hidden">
+              <motion.img
+                variants={imageVariant}
+                initial="hidden"
+                whileInView="visible"
+                whileHover="hover"
                 src={project.image}
                 alt={project.altText}
                 className="object-cover w-full h-full"
               />
-              <div className="absolute inset-0 bg-black bg-opacity-30"></div>
-            </div>
+            </motion.div>
           </div>
         </a>
       ))}
@@ -139,4 +201,137 @@ export default Work;
       </a>
     </div>
 
+*/
+
+
+
+
+
+
+/*
+transform transition-transform duration-300 hover:scale-110
+
+import { ProjectItem } from "../types/type";
+import { motion } from "framer-motion";
+
+type WorkProps = {
+  projects: ProjectItem[];
+};
+
+
+const titleVariant = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.05,
+      duration: 0.5,
+    },
+  },
+};
+
+const descriptionVariant = {
+  hidden: { opacity: 0, x: -300 },
+  visible: (index: number) => ({
+    opacity: 1,
+    x: 0,
+    transition: {
+      delay: index * 0.05,
+      duration: 0.7,
+    },
+  }),
+};
+
+
+const imageVariant = {
+  hidden: { opacity: 0, width: "0%" ,scale:1},
+  visible: {
+    opacity: 1,
+    width: "100%",
+    transition: {
+      duration: 0.7,
+    },
+  },
+  hover: {
+    scale: 1.2,
+    transition: {
+      duration: 0.3,
+    },
+  },
+};
+
+
+
+const Work = ({ projects }:WorkProps) => {
+  return (
+    <div
+      id="work"
+      className="pt-40 pb-10 flex flex-col justify-center items-center gap-y-32 sm:gap-y-40"
+    >
+      {projects.map((project, index) => (
+        <a
+          key={index}
+          className={`flex flex-col sm:flex-row items-center w-full sm:w-[90%] mx-auto cursor-pointer ${
+            project.reverse ? "sm:flex-row-reverse lg:gap-x-28 sm:gap-x-8" : ""
+          }`}
+          href="#"
+        >
+          <div
+            className={`p-4 w-full sm:w-1/2 ${
+              project.reverse ? "sm:order-2" : "order-1"
+            }`}
+          >
+            <motion.div
+              variants={titleVariant}
+              initial="hidden"
+              whileInView="visible"
+              className="uppercase text-2xl sm:text-3xl font-medium"
+            >
+              {project.title}
+            </motion.div>
+            <motion.p
+              key={index}
+              variants={descriptionVariant}
+              initial="hidden"
+              whileInView="visible"
+              className={`pl-4 text-sm leading-6 sm:text-base mt-2 font-normal max-w-[70%] sm:max-w-[70%] ${
+                project.reverse ? "sm:max-w-[90%]" : ""
+              }`}
+            >
+              {project.description}
+            </motion.p>
+          </div>
+
+          <div
+            className={`w-[92%] sm:w-1/2 mt-4 sm:mt-0 ${
+              project.reverse ? "sm:order-2" : "order-1"
+            }`}
+          >
+            <motion.div className="aspect-video relative overflow-hidden">
+              <motion.img
+                variants={imageVariant}
+                initial="hidden"
+                whileInView="visible"
+                whileHover="hover"
+                src={project.image}
+                alt={project.altText}
+                className="object-cover w-full h-full"
+              />
+              <motion.div
+                variants={imageVariant}
+                initial="hidden"
+                whileInView="visible"
+                className="absolute inset-0 bg-black bg-opacity-30"
+              ></motion.div>
+            </motion.div>
+          </div>
+        </a>
+      ))}
+    </div>
+  );
+};
+
+
+export default Work;
 */

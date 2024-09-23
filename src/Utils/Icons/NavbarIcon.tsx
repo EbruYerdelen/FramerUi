@@ -3,7 +3,7 @@ const NavbarIcon = () => {
   return (
     <svg
       width="110"
-      height="28"
+      height="38"
       viewBox="0 0 113 31"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
