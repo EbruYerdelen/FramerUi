@@ -58,6 +58,11 @@
     margin-bottom: 6.25em;
     display: flex;
     gap: 10px;
+    /*overflow-x: scroll;*/
+}
+
+.awards-wrap::-webkit-scrollbar{
+    display: none;
 }
 
 .awards-wrap .award-img img{

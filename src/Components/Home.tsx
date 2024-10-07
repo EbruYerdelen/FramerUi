@@ -9,7 +9,7 @@ import InfoCards from "./InfoCards";
 import Awards from "./Awards";
 import Comments from "./Comments";
 import Faq from "./Faq";
-import { cardsData, faqsData, projectsData } from "../Utils/Data";
+import { cardsData, commenterData, faqsData, projectsData } from "../Utils/Data";
 import {motion} from "framer-motion";
 import Navbar from "./Navbar";
 
@@ -252,7 +252,7 @@ const Home = () => {
 
       {<InfoCards cards={cardsData} />}
       {<Awards />}
-      {<Comments />}
+      {<Comments comments={commenterData} />}
 
       <div className="p-4 pt-24 flex justify-center">
         <div className=" w-fit flex flex-col gap-10 items-center leading-4">

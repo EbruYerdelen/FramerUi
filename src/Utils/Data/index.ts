@@ -1,4 +1,4 @@
-import { faqItem, InfoCardItem, ProjectItem } from "../../types/type";
+import { commenterBlock, faqItem, InfoCardItem, ProjectItem } from "../../types/type";
 
 export const projectsData: ProjectItem[] = [
   {
@@ -73,24 +73,78 @@ export const cardsData: InfoCardItem[] = [
 
 export const faqsData: faqItem[] = [
   {
+    id: 0,
     question: "Do you do web design or web development?",
+    text1: "I do both",
+    text2:
+      "Most of the times I take projects from strategy to design, and development in Webflow. However, if you have a Figma file that needs to be built in Webflow, or simply need me to design your website and your team will handle development, that's also fine.",
   },
   {
+    id: 1,
     question: "I'm an agency, do you develop figma designs?",
+    text2:
+      "Most of the times I take projects from strategy to design, and development in Webflow. However, if you have a Figma file that needs to be built in Webflow, or simply need me to design your website and your team will handle development, that's also fine.",
   },
   {
+    id: 2,
     question: "Why do I develop solely using Webflow?",
+    text2:
+      "Most of the times I take projects from strategy to design, and development in Webflow. However, if you have a Figma file that needs to be built in Webflow, or simply need me to design your website and your team will handle development, that's also fine.",
   },
   {
+    id: 3,
     question: "Do you do web design or web development?",
+    text2:
+      "Most of the times I take projects from strategy to design, and development in Webflow. However, if you have a Figma file that needs to be built in Webflow, or simply need me to design your website and your team will handle development, that's also fine.",
   },
   {
+    id: 4,
     question: "Do you do web design or web development?",
+    text2:
+      "Most of the times I take projects from strategy to design, and development in Webflow. However, if you have a Figma file that needs to be built in Webflow, or simply need me to design your website and your team will handle development, that's also fine.",
   },
   {
+    id: 5,
     question: "Do you do web design or web development?",
+    text2:
+      "Most of the times I take projects from strategy to design, and development in Webflow. However, if you have a Figma file that needs to be built in Webflow, or simply need me to design your website and your team will handle development, that's also fine.",
   },
   {
+    id: 6,
     question: "Do you do web design or web development?",
+    text2:
+      "Most of the times I take projects from strategy to design, and development in Webflow. However, if you have a Figma file that needs to be built in Webflow, or simply need me to design your website and your team will handle development, that's also fine.",
+  },
+];
+
+
+
+export const commenterData:commenterBlock[] = [
+  {
+    name: "Frazer Hurrell",
+    role: "Creative Technologist",
+    company: "Yahoo!",
+    project: "British Airways",
+    image: "assets/images/commenter1.png",
+    comment:
+      "From the initial meeting to the final delivery, Ethan has created a feeling of trust and delivered everything we asked of him. The quality of his work speaks for itself and he is able to execute at a pace. He is an excellent Webflow developer and we will be calling on his services again, very soon.",
+  },
+  {
+    name: "Jane Doe",
+    role: "Software Engineer",
+    company: "Google",
+    project: "Google Maps",
+    image: "assets/images/commenter2.png",
+    comment:
+      "Ethan has been an exceptional team player and her contributions to the Google Maps project have been invaluable. Her expertise in software engineering is top-notch.",
+  },
+  {
+    name: "John Smith",
+    role: "Product Manager",
+    company: "Facebook",
+    project: "Facebook Ads",
+    image: "assets/images/commenter3.png",
+    comment:
+      "Ethan's leadership and vision have been instrumental in the success of the Facebook Ads project. His ability to manage and deliver complex projects is impressive.",
   },
 ];

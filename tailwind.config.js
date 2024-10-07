@@ -21,7 +21,7 @@ export default {
       },
       backgroundImage: {
         "metallic-gradient":
-          "linear-gradient(135deg, rgba(250, 253, 253, 0.98) 0%, rgba(255, 255, 255, 0.98) 50%, rgba(240, 253, 223, 0.98) 100%)",
+          "linear-gradient(135deg, rgba(250, 253, 253, 0.98) 0%, rgba(255, 255, 255, 0.98) 50%, rgba(255, 255, 255, 0.98) 100%)",
       },
     },
   },
